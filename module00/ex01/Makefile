@@ -2,9 +2,9 @@ CC=c++
 CCFLAG=-Wall -Wextra -Werror -std=c++98
 RM=rm -rf
 
-SRC=megaphone.cpp
+SRC=PhoneBook.cpp
 OBJ=$(SRC:.cpp=.o)
-NAME=megaphone
+NAME=phonebook
 
 all : $(NAME)
 
@@ -14,13 +14,13 @@ all : $(NAME)
 $(NAME) : $(OBJ)
 	$(CC) $(CCFLAG) $(OBJ) -o $@
 
-clean :
-	$(RM) $(OBJ)
+re : fclean all
 
 fclean : clean
 	$(RM) $(NAME)
 
-re : fclean all
+clean :
+	$(RM) $(OBJ)
 
-.PHONY :
-	all re clean fclean
+.phony :
+	all re fclean clean
