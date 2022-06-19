@@ -8,11 +8,11 @@ NAME=phonebook
 
 all : $(NAME)
 
-%.o : %.cpp
-	$(CC) $(CCFLAG) -c $^ -o $@
-
 $(NAME) : $(OBJ)
 	$(CC) $(CCFLAG) $(OBJ) -o $@
+
+%.o : %.cpp
+	$(CC) $(CCFLAG) -c $^ -o $@
 
 re : fclean all
 

@@ -2,21 +2,23 @@
 
 class Contact {
 public:
-	string firstName;
-	string lastName;
-	string nickName;
-	string secret;
+	std::string firstName;
+	std::string lastName;
+	std::string nickName;
+	std::string secret;
 	int phoneNumber;
-
-}
+};
 
 class PhoneBook {
 public:
-	void addContact(Contact &c);
-	void searchContact(Contact &c);
+	int total;
+
+	PhoneBook();
+
+	void addContact(Contact c);
+	Contact searchContact(int idx);
 
 
 private:
 	Contact contacts[8];
-	int total;
 };
