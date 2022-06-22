@@ -1,18 +1,19 @@
 CC=c++
-CCFLAG=-Wall -Wextra -Werror -std=c++98
+CCFLAG=-Wall -Werror -Wextra -std=c++98
 RM=rm -rf
 
-SRC=megaphone.cpp
+SRC=Account.cpp tests.cpp
 OBJ=$(SRC:.cpp=.o)
-NAME=megaphone
+
+NAME=accounts
 
 all : $(NAME)
 
 %.o : %.cpp
-	$(CC) $(CCFLAG) -c $< -o $@
+	$(CC) $(CCFLAG) -I. -c $< -o $@
 
 $(NAME) : $(OBJ)
-	$(CC) $(CCFLAG) $^ -o $@
+	$(CC) $(CCFLAG) -I. $^ -o $@
 
 clean :
 	$(RM) $(OBJ)
